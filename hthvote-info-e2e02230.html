@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 产品介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f4f5f7;
+            color: #1e1f22;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #12141a 0%, #1f232b 100%);
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            color: #eaeef3;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 680px;
+            margin: 0.3rem auto 0;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.2rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.7rem;
+            font-weight: 450;
+            border-left: 5px solid #3a6ea5;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            color: #1f2a3a;
+        }
+
+        .intro-card p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #2b2e36;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .highlight-item {
+            background: #f8faff;
+            border-radius: 18px;
+            padding: 1.5rem 1.2rem;
+            border: 1px solid #e4e9f2;
+            transition: box-shadow 0.2s;
+        }
+
+        .highlight-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: #1f2c3d;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #3d4352;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .scenario-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .scenario-block {
+            flex: 1 1 200px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .scenario-block h4 {
+            font-size: 1.2rem;
+            font-weight: 480;
+            margin-bottom: 1rem;
+            color: #2b3a4a;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #d2dbe8;
+        }
+
+        .scenario-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scenario-block li {
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #2f3541;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .scenario-block li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #3a6ea5;
+            font-weight: 700;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin-bottom: 1.2rem;
+            color: #1f2a3a;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #edf0f5;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #1a2533;
+        }
+
+        .faq-answer {
+            color: #404756;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .link-note {
+            margin-top: 1.8rem;
+            font-size: 1rem;
+            padding: 1.2rem 1.6rem;
+            background: #ebeff6;
+            border-radius: 40px;
+            color: #1f2937;
+            display: inline-block;
+        }
+
+        a {
+            color: #2b5e9c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #1a3f6b;
+            border-bottom-color: #2b5e9c;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #dce2ec;
+            font-size: 0.9rem;
+            color: #5c6475;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .intro-card {
+                padding: 1.6rem 1rem;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+            .scenario-section {
+                flex-direction: column;
+            }
+            .faq-mini {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>华体会</h1>
+        <p>日常查询、对照与延伸阅读的实用工具视角</p>
+    </section>
+
+    <div class="container">
+        <!-- 摘要 / 定义 -->
+        <div class="intro-card">
+            <h2>产品摘要 · 定位</h2>
+            <p>
+                <a href="https://hthvote.com.cn">华体会</a> 是一个面向信息检索与内容对照的轻量化平台，专注于为用户提供简洁、结构化的参考内容。它不追求信息轰炸，而是帮助使用者在日常查询、资料比对或延伸阅读时获得清晰的方向。
+            </p>
+            <p>
+                从产品设计来看，华体会更强调信息的可读性与关联性，尤其适合需要快速理解某一主题框架或寻找对照要点的场景。不同于综合性门户，它倾向于做减法：呈现核心事实，留出用户自主判断的空间。
+            </p>
+        </div>
+
+        <!-- 亮点卡片区 -->
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <h3>内容结构化</h3>
+                <p>信息按逻辑分层，从概括到细节逐级展开，便于速览或深入查阅。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>低干扰阅读</h3>
+                <p>页面版式克制，减少冗余弹窗与过度动效，聚焦在内容本身。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>对照友好</h3>
+                <p>并列式信息布局，适合同时比较多个条目或数据。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>轻量响应</h3>
+                <p>在不同屏幕尺寸下均保持可读性，移动端同样舒适。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 / 场景 -->
+        <div class="scenario-section">
+            <div class="scenario-block">
+                <h4>日常查询</h4>
+                <ul>
+                    <li>快速了解不熟悉的概念框架</li>
+                    <li>查找某类别的条目或定义</li>
+                    <li>核对常见的参照项</li>
+                </ul>
+            </div>
+            <div class="scenario-block">
+                <h4>对照阅读</h4>
+                <ul>
+                    <li>并排比对不同信息项</li>
+                    <li>梳理异同点</li>
+                    <li>辅助形成个人判断</li>
+                </ul>
+            </div>
+            <div class="scenario-block">
+                <h4>延伸参考</h4>
+                <ul>
+                    <li>从已有条目出发关联其他主题</li>
+                    <li>获得进一步查阅的线索</li>
+                    <li>补充背景知识</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 (温和克制) -->
+        <div class="faq-mini">
+            <h2>常见疑问 · 简要</h2>
+            <div class="faq-item">
+                <div class="faq-question">华体会的内容来源是什么？</div>
+                <div class="faq-answer">平台内容基于公开可查的信息进行整理与组织，力求准确，但用户仍建议多方核实。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">是否需要注册才能使用？</div>
+                <div class="faq-answer">目前华体会的大部分内容可直接查阅，无需强制注册。部分功能可能根据后续规划有所调整。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">信息更新频率如何？</div>
+                <div class="faq-answer">根据内容领域的不同，会进行不定期更新。建议以站内实际显示为准。</div>
+            </div>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div style="margin: 1.5rem 0 1rem;">
+            <p style="font-size: 1rem; color: #2a3142;">
+                如果你希望进一步了解或直接使用，可以通过 
+                <a href="https://hthvote.com.cn">华体会</a> 
+                查阅当前的内容结构。该平台面向有独立信息需求的用户，不设强制引导，也无需额外跳转。
+            </p>
+            <div class="link-note">
+                ※ 所有信息仅供参考，请结合自身判断使用。
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <span>日常查询 · 对照 · 延伸</span>
+        </div>
+    </div>
+</body>
+</html>
